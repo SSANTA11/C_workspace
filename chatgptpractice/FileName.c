@@ -64,30 +64,103 @@ makefile
 이 문제를 해결해보시고, 궁금한 점이 있으면 언제든지 물어보세요!*/
 
 
+//# define _CRT_SECURE_NO_WARNINGS
+//# include <stdio.h>
+//int main() 
+//{
+//	char input;
+//		int count_uppercase = 0, count_lowercase = 0, count_degits = 0;
+//		printf("문자를 입력하세요: ");
+//		while (1) {
+//			input = getchar();
+//			if (input == '\n') {
+//				break;
+//			}
+//			else
+//				if (input >= 'A' && input <= 'Z')
+//					count_uppercase++;
+//				else if ('a' <= input && input <= 'z')
+//					count_lowercase++;
+//				else if ('0' <= input && input <= '9')
+//					count_degits++;
+//		}
+//		printf("대문자 %d개\n", count_uppercase);
+//		printf("소문자 %d개\n", count_lowercase);
+//		printf("숫자 %d개", count_degits);
+//		
+//		return 0;
+//
+//}
+
+/*다음은 C 언어 관련 문제를 더 내드리겠습니다. 반복문과 조건문을 결합한 문제를 내보겠습니다.
+
+문제 1:
+사용자로부터 정수를 입력받아, 그 정수가 소수인지 아닌지를 판별하는 프로그램을 작성하세요. 소수란 1과 자기 자신으로만 나누어 떨어지는 숫자를 말합니다. (예: 2, 3, 5, 7, 11, 13 등)
+
+조건:
+입력받은 정수가 1보다 큰 정수여야 합니다.
+소수일 경우 "소수입니다."를 출력하고, 소수가 아닐 경우 "소수가 아닙니다."를 출력하세요.
+반복문을 사용하여 2부터 입력받은 숫자 전까지 나누어 떨어지는지 확인하세요.
+예시 실행:
+코드 복사
+정수를 입력하세요: 29
+소수입니다.
+코드 복사
+정수를 입력하세요: 28
+소수가 아닙니다.
+*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n;
+//	printf("정수를 입력하시오: ");
+//	scanf("%d", &n);
+//	if (n == 1)
+//		printf("소수가 아닙니다.");
+//	else if (n == 2)
+//		printf("소수입니다.");
+//	else if (3<=n)
+//		for (int i = 2; i < n; i++) {
+//			if (n % i == 0)
+//			{
+//				printf("소수가 아닙니다.");
+//				break;
+//			}
+//			else if (i == n - 1)
+//				printf("소수입니다.");
+//		}
+//	else
+//		printf("소수는 2이상의 정수만 해당됩니다.");
+//		}
+
+/*문제 2:
+사용자로부터 숫자를 입력받아, 그 숫자가 완전수인지 판별하는 프로그램을 작성하세요. 완전수란 자신을 제외한 약수들의 합이 자기 자신과 같은 수를 말합니다. (예: 6 → 1 + 2 + 3 = 6, 28 → 1 + 2 + 4 + 7 + 14 = 28)
+
+조건:
+입력받은 숫자가 완전수일 경우 "완전수입니다."를 출력하고, 그렇지 않으면 "완전수가 아닙니다."를 출력하세요.
+1부터 입력받은 숫자 전까지 나누어 떨어지는 모든 약수의 합을 구해야 합니다.
+예시 실행:
+코드 복사
+정수를 입력하세요: 6
+완전수입니다.
+코드 복사
+정수를 입력하세요: 10
+완전수가 아닙니다.
+*/
 # define _CRT_SECURE_NO_WARNINGS
-# include <stdio.h>
-int main() 
-{
-	char input;
-		int count_uppercase = 0, count_lowercase = 0, count_degits = 0;
-		printf("문자를 입력하세요: ");
-		while (1) {
-			input = getchar();
-			if (input == '\n') {
-				break;
-			}
-			else
-				if (input >= 'A' && input <= 'Z')
-					count_uppercase++;
-				else if ('a' <= input && input <= 'z')
-					count_lowercase++;
-				else if ('0' <= input && input <= '9')
-					count_degits++;
-		}
-		printf("대문자 %d개\n", count_uppercase);
-		printf("소문자 %d개\n", count_lowercase);
-		printf("숫자 %d개", count_degits);
-		
-		return 0;
+#include <stdio.h>
+int main(){
+	int n;
+	int count = 0;
+	printf("정수를 입력하세요: ");
+	scanf("%d",&n);
+	for (int i = 1; i < n; i++)
+		if (n % i == 0)
+			count+=i;
+	if (count == n)
+		printf("완전수입니다.");
+	else
+		printf("완전수가 아닙니다.");
 
 }
