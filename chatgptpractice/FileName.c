@@ -148,19 +148,58 @@ makefile
 정수를 입력하세요: 10
 완전수가 아닙니다.
 */
-# define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-int main(){
-	int n;
-	int count = 0;
-	printf("정수를 입력하세요: ");
-	scanf("%d",&n);
-	for (int i = 1; i < n; i++)
-		if (n % i == 0)
-			count+=i;
-	if (count == n)
-		printf("완전수입니다.");
-	else
-		printf("완전수가 아닙니다.");
+//# define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main(){
+//	int n;
+//	int count = 0;
+//	printf("정수를 입력하세요: ");
+//	scanf("%d",&n);
+//	for (int i = 1; i < n; i++)
+//		if (n % i == 0)
+//			count+=i;
+//	if (count == n)
+//		printf("완전수입니다.");
+//	else
+//		printf("완전수가 아닙니다.");
+//
+//}
 
+//문제 3:
+//사용자로부터 두 정수를 입력받고, 그 범위 내에서 모든 소수를 출력하는 프로그램을 작성하세요.
+//
+//조건:
+//두 정수는 크기와 상관없이 입력받고, 작은 숫자부터 큰 숫자까지의 범위를 정합니다.
+//해당 범위 내에서 소수를 모두 출력하세요.
+//예시 실행 :
+//makefile
+//코드 복사
+//첫 번째 정수를 입력하세요 : 10
+//두 번째 정수를 입력하세요 : 30
+//소수 : 11 13 17 19 23 29
+//이 문제들을 풀어보세요.만약 어려운 부분이 있거나 추가 설명이 필요하시면 언제든지 질문해주세요!
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int a, b;
+	printf("첫번째 정수를 입력하시오: ");
+	scanf("%d", &a);
+	printf("첫번째 정수를 입력하시오: ");
+	scanf("%d", &b);
+	printf("소수: ");
+	for (int i = a; i <= b; i++)
+		for (int r = 2; r < i; r++)
+			if (i % r == 0)
+				break;
+			else
+				if (r == b - 1)
+				{
+					printf("%d", i);
+					break;
+				}
+				else
+					continue;
+			
 }
