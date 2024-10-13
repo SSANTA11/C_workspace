@@ -179,27 +179,53 @@ makefile
 //소수 : 11 13 17 19 23 29
 //이 문제들을 풀어보세요.만약 어려운 부분이 있거나 추가 설명이 필요하시면 언제든지 질문해주세요!
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int a, b;
+//	printf("첫번째 정수를 입력하시오: ");
+//	scanf("%d", &a);
+//	printf("첫번째 정수를 입력하시오: ");
+//	scanf("%d", &b);
+//	printf("소수: ");
+//	for (int i = a; i <= b; i++)
+//		for (int r = 2; r < i; r++)
+//			if (i % r != 0)
+//				if (r == i - 1)
+//				{
+//					printf("%d ", i);
+//					break;
+//				}
+//				else
+//					continue;
+//			else
+//				break;
+//
+//
+//}
+//
+//문제:
+//사용자로부터 정수 n을 입력받아, 1부터 n까지의 숫자 중 3의 배수이면서 5의 배수인 숫자를 모두 출력하는 프로그램을 작성하세요.
+//
+//조건 :
+//	입력된 정수 n까지의 숫자 중에서 3의 배수이면서 5의 배수인 숫자를 찾아 출력하세요.
+//	각 숫자는 띄어쓰기로 구분해 출력합니다.
+//	예시 실행 :
+//코드 복사
+//정수를 입력하세요 : 50
+//15 30 45
+//이 문제를 해결해 보시고, 필요하면 언제든지 질문해 주세요!
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
-	int a, b;
-	printf("첫번째 정수를 입력하시오: ");
-	scanf("%d", &a);
-	printf("첫번째 정수를 입력하시오: ");
-	scanf("%d", &b);
-	printf("소수: ");
-	for (int i = a; i <= b; i++)
-		for (int r = 2; r < i; r++)
-			if (i % r == 0)
-				break;
-			else
-				if (r == b - 1)
-				{
-					printf("%d", i);
-					break;
-				}
-				else
-					continue;
-			
+	int n;
+	printf("정수를 입력하세요 : ");
+	scanf("%d", &n);
+
+	for (int i = 1; i <= n; i++)
+		if (i % 15 == 0)
+			printf("%d ", i);
 }
