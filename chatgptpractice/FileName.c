@@ -217,15 +217,51 @@ makefile
 //15 30 45
 //이 문제를 해결해 보시고, 필요하면 언제든지 질문해 주세요!
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n;
+//	printf("정수를 입력하세요 : ");
+//	scanf("%d", &n);
+//
+//	for (int i = 1; i <= n; i++)
+//		if (i % 15 == 0)
+//			printf("%d ", i);
+
+
+/*문제:
+사용자로부터 문자열을 입력받아, 그 문자열에 포함된 **모음(A, E, I, O, U, a, e, i, o, u)**의 개수를 세는 프로그램을 작성하세요.
+
+조건:
+사용자로부터 문자열을 입력받습니다.
+입력된 문자열에서 **모음(A, E, I, O, U, a, e, i, o, u)**의 개수를 세고, 그 결과를 출력하세요.
+대문자와 소문자를 구분하지 않으며, 특수 문자나 숫자는 무시합니다.
+예시 실행:
+코드 복사
+문자열을 입력하세요: Hello World
+모음의 개수: 3
+이 문제를 해결해 보시고, 궁금한 점이나 추가적인 설명이 필요하면 언제든지 질문해 주세요! ??*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-
+#include <string.h>
 int main() {
-	int n;
-	printf("정수를 입력하세요 : ");
-	scanf("%d", &n);
-
-	for (int i = 1; i <= n; i++)
-		if (i % 15 == 0)
-			printf("%d ", i);
+	char str[100];
+	int count=0;
+	printf("문자열을 입력하세요: ");
+	scanf("%s", &str);
+	
+	for (int i = 0; i <= strlen(str); i++)
+		if (str[i] == 'A' 
+			|| str[i] == 'a' 
+			|| str[i] == 'E' 
+			|| str[i] == 'e' 
+			|| str[i] == 'I' 
+			|| str[i] == 'i' 
+			|| str[i] == 'O' 
+			|| str[i] == 'o' 
+			|| str[i] == 'U' 
+			|| str[i] == 'u')
+			;
 }
