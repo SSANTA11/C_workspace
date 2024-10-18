@@ -105,7 +105,7 @@ int main() {
 				puts("");
 			}*/
 			/*----------------------------------------------------------------------------*/
-	int num, count = 0;
+	/*int num, count = 0;
 
 	do {
 		printf("정수 입력: ");
@@ -121,6 +121,26 @@ int main() {
 			printf("소수아님");
 		else
 			printf("소수임");
-	
 		}
+	*/
+		double input;
+		int n;
+
+		do {
+			printf("자연수를 입력하세요: ");
+
+			do {
+				scanf("%lf", &input);
+				n = (input > 0 && (int)input == input);  // 자연수인지 확인
+
+				if (!n) {
+					printf("잘못된 입력입니다. 자연수를 입력하세요: ");
+				}
+			} while (!n);  // 실수일 경우 다시 입력
+
+			printf("입력한 자연수는 %d입니다.\n", (int)input);
+		} while (0);  // 한 번만 실행하고 종료
+
+		return 0;
+
 }
