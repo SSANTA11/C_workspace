@@ -243,25 +243,67 @@ makefile
 모음의 개수: 3
 이 문제를 해결해 보시고, 궁금한 점이나 추가적인 설명이 필요하면 언제든지 질문해 주세요! ??*/
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <string.h>
+//int main() {
+//	char str[100];
+//	int count=0;
+//	printf("문자열을 입력하세요: ");
+//	scanf("%s", &str);
+//	
+//	for (int i = 0; i <= strlen(str); i++)
+//		if (str[i] == 'A' 
+//			|| str[i] == 'a' 
+//			|| str[i] == 'E' 
+//			|| str[i] == 'e' 
+//			|| str[i] == 'I' 
+//			|| str[i] == 'i' 
+//			|| str[i] == 'O' 
+//			|| str[i] == 'o' 
+//			|| str[i] == 'U' 
+//			|| str[i] == 'u')
+//			;
+//}
+
+//문제:
+//사용자로부터 문자열을 입력받고, 그 문자열에서** 모음(A, E, I, O, U, a, e, i, o, u)** 의 개수를 세는 프로그램을 작성하세요.단, 다음 조건을 만족해야 합니다.
+//
+//조건 :
+//	문자열 길이 제한 : 사용자로부터 입력받은 문자열의 길이는 최대 100자로 제한됩니다.
+//	문자 검사 : 입력된 문자열에서 모음의 개수를 세고, 대소문자 구분 없이 처리합니다.
+//	특수 문자와 공백은 무시하며, 숫자는 개수에 포함하지 않습니다.
+//	문자열이 비어있을 경우 "유효한 문자열을 입력하세요."라는 메시지를 출력합니다.
+//	모음의 개수가 5개 이상일 경우, "모음이 많습니다."를 추가로 출력합니다.
+//	strlen 함수를 사용하지 않고, 반복문을 이용하여 문자열 끝을 확인합니다. ('\0' 문자를 사용)
+//	예시 실행 1 :
+//	문자열을 입력하세요 : Programming is fun!
+//	모음의 개수 : 5
+//	모음이 많습니다.
+//	예시 실행 2 :
+//	문자열을 입력하세요 : hello
+//	모음의 개수 : 2
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
-int main() {
+int main(){
 	char str[100];
-	int count=0;
-	printf("문자열을 입력하세요: ");
-	scanf("%s", &str);
-	
-	for (int i = 0; i <= strlen(str); i++)
-		if (str[i] == 'A' 
-			|| str[i] == 'a' 
-			|| str[i] == 'E' 
-			|| str[i] == 'e' 
-			|| str[i] == 'I' 
-			|| str[i] == 'i' 
-			|| str[i] == 'O' 
-			|| str[i] == 'o' 
-			|| str[i] == 'U' 
+	int i=0, count= 0;
+	printf("문자열을 입력하세요 : ");
+	scanf("%s",&str);
+	do {
+		if (str[i] == 'A'
+			|| str[i] == 'a'
+			|| str[i] == 'E'
+			|| str[i] == 'e'
+			|| str[i] == 'I'
+			|| str[i] == 'i'
+			|| str[i] == 'O'
+			|| str[i] == 'o'
+			|| str[i] == 'U'
 			|| str[i] == 'u')
-			;
+			count++;
+		i++;
+	} while(str[i]!='\0');
+	printf("%d", count);
 }
