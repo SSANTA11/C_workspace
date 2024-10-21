@@ -316,9 +316,12 @@ int main() {
 	scanf("%d",&num);
 	do{
 		if (num % i == 0) {
-			printf("%d", i);
+			printf("%d, ", i);
 			num /= i;
 		}
-		i++;
-	} while (i==num);
+		else
+			i++;
+	} while (i!=num);
+	printf("%d", num);
+	return 0;
 }
