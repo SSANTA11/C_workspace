@@ -312,16 +312,19 @@ makefile
 
 int main() {
 	int num, i=2;
-	printf("정수: ");
+	printf("2 이상의 정수: ");
 	scanf("%d",&num);
-	do{
-		if (num % i == 0) {
-			printf("%d, ", i);
-			num /= i;
-		}
-		else
-			i++;
-	} while (i!=num);
-	printf("%d", num);
+	if (num > i) {
+		do {
+			if (num % i == 0) {
+				printf("%d, ", i);
+				num /= i;
+			}
+			else
+				i++;
+		} while (num!=1);
+	}
+	else
+		printf("정수는 2이상이어야 합니다.");
 	return 0;
 }
