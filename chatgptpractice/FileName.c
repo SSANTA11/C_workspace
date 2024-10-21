@@ -284,26 +284,41 @@ makefile
 //	문자열을 입력하세요 : hello
 //	모음의 개수 : 2
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main(){
+//	char str[100];
+//	int i=0, count= 0;
+//	printf("문자열을 입력하세요 : ");
+//	scanf("%s",&str);
+//	do {
+//		if (str[i] == 'A'
+//			|| str[i] == 'a'
+//			|| str[i] == 'E'
+//			|| str[i] == 'e'
+//			|| str[i] == 'I'
+//			|| str[i] == 'i'
+//			|| str[i] == 'O'
+//			|| str[i] == 'o'
+//			|| str[i] == 'U'
+//			|| str[i] == 'u')
+//			count++;
+//		i++;
+//	} while(str[i]!='\0');
+//	printf("%d", count);
+//}
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int main(){
-	char str[100];
-	int i=0, count= 0;
-	printf("문자열을 입력하세요 : ");
-	scanf("%s",&str);
-	do {
-		if (str[i] == 'A'
-			|| str[i] == 'a'
-			|| str[i] == 'E'
-			|| str[i] == 'e'
-			|| str[i] == 'I'
-			|| str[i] == 'i'
-			|| str[i] == 'O'
-			|| str[i] == 'o'
-			|| str[i] == 'U'
-			|| str[i] == 'u')
-			count++;
+
+int main() {
+	int num, i=2;
+	printf("정수: ");
+	scanf("%d",&num);
+	do{
+		if (num % i == 0) {
+			printf("%d", i);
+			num /= i;
+		}
 		i++;
-	} while(str[i]!='\0');
-	printf("%d", count);
+	} while (i==num);
 }
