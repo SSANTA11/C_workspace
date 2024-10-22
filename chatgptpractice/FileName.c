@@ -307,24 +307,46 @@ makefile
 //	} while(str[i]!='\0');
 //	printf("%d", count);
 //}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int num, i=2;
+//	printf("2 이상의 정수: ");
+//	scanf("%d",&num);
+//	if (num > i) {
+//		do {
+//			if (num % i == 0) {
+//				printf("%d, ", i);
+//				num /= i;
+//			}
+//			else
+//				i++;
+//		} while (num!=1);
+//	}
+//	else
+//		printf("정수는 2이상이어야 합니다.");
+//	return 0;
+//}
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
-	int num, i=2;
-	printf("2 이상의 정수: ");
-	scanf("%d",&num);
-	if (num > i) {
-		do {
-			if (num % i == 0) {
-				printf("%d, ", i);
-				num /= i;
-			}
-			else
-				i++;
-		} while (num!=1);
+	int num;
+	printf("정수 입력");
+	scanf("%d", &num);
+	if (num != 2) {
+		printf("2 ");
+		for (int i = 2; i <= num; i++)
+			for (int r = 2; r <= i - 1; r++)
+				if (i % r == 0)
+					break;
+				else
+					if (r == i - 1)
+						printf("%d ", i);
 	}
+
 	else
-		printf("정수는 2이상이어야 합니다.");
-	return 0;
+		printf("%d", num);
 }
