@@ -329,24 +329,52 @@ makefile
 //	return 0;
 //}
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+
+// 소수 찾기 프로그램
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int num;
+//	printf("정수 입력");
+//	scanf("%d", &num);
+//	if (num != 2) {
+//		printf("2 ");
+//		for (int i = 2; i <= num; i++)
+//			for (int r = 2; r <= i - 1; r++)
+//				if (i % r == 0)
+//					break;
+//				else
+//					if (r == i - 1)
+//						printf("%d ", i);
+//	}
+//
+//	else
+//		printf("%d", num);
+//}
+
+//삼각형의 유효성 및 분류
+//삼각형의 유효성뿐만 아니라 삼각형을 정삼각형 이등변 일반으로 나누어 분류하세요
+
+
+# define _CRT_SECURE_NO_WARNINGS
+# include <stdio.h>
 
 int main() {
-	int num;
-	printf("정수 입력");
-	scanf("%d", &num);
-	if (num != 2) {
-		printf("2 ");
-		for (int i = 2; i <= num; i++)
-			for (int r = 2; r <= i - 1; r++)
-				if (i % r == 0)
-					break;
-				else
-					if (r == i - 1)
-						printf("%d ", i);
-	}
-
+	int a, b, c, st;
+	printf("삼각형의 세변을 각각 입력하세요(예: 1 2 3):");
+	do {
+		scanf("%d %d %d", &a, &b, &c);
+		st = (b + c > a) && (a + c > b) && (a + b > c);
+		if (!st) {
+			printf("유효한 삼각형이 아닙니다. 다시 입력하세요!\n");
+			printf("삼각형의 세변을 각각 입력하세요(예: 1 2 3):");
+		}
+	} while (!st);
+	if (a == b && b == c && a == c)
+		printf("정삼각형");
+	else if (a == b || b == c || a == c)
+		printf("이등변삼각형");
 	else
-		printf("%d", num);
+		printf("일반 삼각형");
 }
