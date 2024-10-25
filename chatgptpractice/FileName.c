@@ -379,3 +379,67 @@ makefile
 //		printf("일반 삼각형");
 //}
 
+
+//// 문자열 및 배열 연습
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	char ch[100];
+//	printf("문자열을 입력하세요: ");
+//	scanf("%s", &ch);
+//	printf("%d", ch[0]);
+//}
+
+
+//문제:
+//사용자로부터 세 개의 정수를 입력받아 이들 중 가장 큰 값과 가장 작은 값을 찾는 프로그램을 작성하세요.
+//
+//조건 :
+//	세 개의 정수는 모두 서로 다른 값을 가집니다.
+//	가장 큰 값과 가장 작은 값을 각각 출력하세요.
+//	예시 실행 :
+//코드 복사
+//정수 3개를 입력하세요 : 15 22 8
+//가장 큰 값 : 22
+//가장 작은 값 : 8
+//힌트 :
+//	if 문을 사용하여 세 개의 정수를 비교합니다.
+//		필요에 따라 중첩 조건문을 활용해도 좋습니다.
+//		이 문제를 풀어보시고, 필요하면 추가 힌트를 드리겠습니다!
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int a, b, c;
+
+	printf("정수 3개를 입력하세요 :");
+	scanf("%d %d %d", &a, &b, &c);
+
+	if (a > b || b > c) {
+		printf("가장 큰 값: %d\n", a);
+		printf("가장 작은 값: %d", b);
+	}
+	else if (a > c || c > b) {
+		printf("가장 큰 값: %d\n", a);
+		printf("가장 작은 값: %d", c);
+	}
+	else if (b > a || a > c) {
+		printf("가장 큰 값: %d\n", b);
+		printf("가장 작은 값: %d", c);
+	}
+	else if (b > c || c > a){
+		printf("가장 큰 값: %d\n", b);
+		printf("가장 작은 값: %d", a);
+	}
+	else if (c > a || a > b) {
+		printf("가장 큰 값: %d\n", c);
+		printf("가장 작은 값: %d", b);
+	}
+	else if (c > b || b > a) {
+		printf("가장 큰 값: %d\n", c);
+		printf("가장 작은 값: %d", a);
+	}
+}
+
