@@ -407,39 +407,63 @@ makefile
 //힌트 :
 //	if 문을 사용하여 세 개의 정수를 비교합니다.
 //		필요에 따라 중첩 조건문을 활용해도 좋습니다.
-//		이 문제를 풀어보시고, 필요하면 추가 힌트를 드리겠습니다!
+////		이 문제를 풀어보시고, 필요하면 추가 힌트를 드리겠습니다!
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+
+//int main() {
+//	int a, b, c;
+//
+//	printf("정수 3개를 입력하세요 :");
+//	scanf("%d %d %d", &a, &b, &c);
+//
+//	if (a > b || b > c) {
+//		printf("가장 큰 값: %d\n", a);
+//		printf("가장 작은 값: %d", b);
+//	}
+//	else if (a > c || c > b) {
+//		printf("가장 큰 값: %d\n", a);
+//		printf("가장 작은 값: %d", c);
+//	}
+//	else if (b > a || a > c) {
+//		printf("가장 큰 값: %d\n", b);
+//		printf("가장 작은 값: %d", c);
+//	}
+//	else if (b > c || c > a){
+//		printf("가장 큰 값: %d\n", b);
+//		printf("가장 작은 값: %d", a);
+//	}
+//	else if (c > a || a > b) {
+//		printf("가장 큰 값: %d\n", c);
+//		printf("가장 작은 값: %d", b);
+//	}
+//	else if (c > b || b > a) {
+//		printf("가장 큰 값: %d\n", c);
+//		printf("가장 작은 값: %d", a);
+//	}
+//}
+//
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
-	int a, b, c;
-
-	printf("정수 3개를 입력하세요 :");
-	scanf("%d %d %d", &a, &b, &c);
-
-	if (a > b || b > c) {
-		printf("가장 큰 값: %d\n", a);
-		printf("가장 작은 값: %d", b);
+	int n, num;
+	int count_1 = 0, count_2 = 0;
+	printf("입력할 정수의 개수(n): ");
+	scanf("%d", &n);
+	if (n >= 1) {
+		printf("정수 %d개를 입력하세요: ", n);
+		for (int i = 1; i <= n; i++) {
+			scanf("%d", &num);
+			if (num % 2 == 0)
+				count_1++;
+			else
+				count_2++;
+		}
+		printf("짝수 개수: %d\n", count_1);
+		printf("홀수 개수: %d", count_2);
 	}
-	else if (a > c || c > b) {
-		printf("가장 큰 값: %d\n", a);
-		printf("가장 작은 값: %d", c);
-	}
-	else if (b > a || a > c) {
-		printf("가장 큰 값: %d\n", b);
-		printf("가장 작은 값: %d", c);
-	}
-	else if (b > c || c > a){
-		printf("가장 큰 값: %d\n", b);
-		printf("가장 작은 값: %d", a);
-	}
-	else if (c > a || a > b) {
-		printf("가장 큰 값: %d\n", c);
-		printf("가장 작은 값: %d", b);
-	}
-	else if (c > b || b > a) {
-		printf("가장 큰 값: %d\n", c);
-		printf("가장 작은 값: %d", a);
-	}
+	else
+		printf("유효한 정수 개수를 입력하세요");
 }
-
