@@ -444,26 +444,101 @@ makefile
 //}
 //
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n, num;
+//	int count_1 = 0, count_2 = 0;
+//	printf("입력할 정수의 개수(n): ");
+//	scanf("%d", &n);
+//	if (n >= 1) {
+//		printf("정수 %d개를 입력하세요: ", n);
+//		for (int i = 1; i <= n; i++) {
+//			scanf("%d", &num);
+//			if (num % 2 == 0)
+//				count_1++;
+//			else
+//				count_2++;
+//		}
+//		printf("짝수 개수: %d\n", count_1);
+//		printf("홀수 개수: %d", count_2);
+//	}
+//	else
+//		printf("유효한 정수 개수를 입력하세요");
+//}
+
+//문제 1:
+//사용자로부터 정수 n을 입력받고, 1부터 n까지의 숫자 중 4의 배수만 출력하는 프로그램을 작성하세요.
+//
+//조건 :
+//	n은 1 이상의 정수입니다.
+//	1부터 n까지 숫자 중에서 4의 배수만 출력합니다.
+//	만약 4의 배수가 없으면, "4의 배수가 없습니다."를 출력합니다.
+//	예시 실행 :
+//코드 복사
+//정수를 입력하세요 : 20
+//4 8 12 16 20
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n, count = 0;
+//	printf("정수를 입력하세요: ");
+//	scanf("%d", &n);
+//	for (int i = 1; i <= n;i++) {
+//		if (i % 4 == 0) {
+//			printf("%d ", i);
+//			count++;
+//		}
+//	}
+//		if (count == 0)
+//			printf("4의 배수가 없습니다!");
+//}
+
+/*문제 2:
+사용자로부터 양의 정수 n을 입력받아, 그 수가 소수인지 판별하는 프로그램을 작성하세요.
+
+조건 :
+	소수란 1과 자기 자신만을 약수로 갖는 수입니다. (예 : 2, 3, 5, 7 등)
+	n이 1이면 "1은 소수가 아닙니다."를 출력합니다.
+	n이 소수이면 "소수입니다.", 소수가 아니면 "소수가 아닙니다."를 출력합니다.
+	예시 실행 :
+코드 복사
+정수를 입력하세요 : 13
+소수입니다.*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n, count = 0;
+//	printf("정수를 입력하세요: ");
+//	scanf("%d", &n);
+//	if (n != 2) {
+//		for (int i = 2; i < n; i++)
+//			if (n % i == 0)
+//				count++;
+//		if (count == 0)
+//			printf("소수입니다");
+//		else
+//			printf("소수가 아닙니다");
+//	}
+//	else
+//		printf("소수입니다");
+//}
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
-	int n, num;
-	int count_1 = 0, count_2 = 0;
-	printf("입력할 정수의 개수(n): ");
+	int n, count = 0;
+	printf("정수를 입력하세요: ");
 	scanf("%d", &n);
-	if (n >= 1) {
-		printf("정수 %d개를 입력하세요: ", n);
-		for (int i = 1; i <= n; i++) {
-			scanf("%d", &num);
-			if (num % 2 == 0)
-				count_1++;
-			else
-				count_2++;
-		}
-		printf("짝수 개수: %d\n", count_1);
-		printf("홀수 개수: %d", count_2);
+
+	while (n > 0){
+		count += n % 10;
+		n /= 10;
 	}
-	else
-		printf("유효한 정수 개수를 입력하세요");
+	printf("각 자리수의 합: %d", count);
 }
