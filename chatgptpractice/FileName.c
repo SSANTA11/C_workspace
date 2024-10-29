@@ -528,17 +528,52 @@ makefile
 //		printf("소수입니다");
 //}
 
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+////
+//int main() {
+//	int n, count = 0;
+//	printf("정수를 입력하세요: ");
+//	scanf("%d", &n);
+//
+//	while (n > 0){
+//		count += n % 10;
+//		n /= 10;
+//	}
+//	printf("각 자리수의 합: %d", count);
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n, count_1 = 0, count_2 = 0;
+//	printf("정수를 입력하세요: ");
+//	scanf("%d", &n);
+//	for (int i = 1; i <= n; i++)
+//		if (i % 2 == 0)
+//			count_1 += i;
+//		else
+//			count_2 += i;
+//printf("짝수의 합: %d\n홀수의 합: %d", count_1, count_2);
+//}
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
 	int n, count = 0;
-	printf("정수를 입력하세요: ");
+	printf("정수를 입력하세요");
 	scanf("%d", &n);
-
-	while (n > 0){
-		count += n % 10;
-		n /= 10;
+	if (n > 0) {
+		for (int i = 1; i <= n; i++)
+			if (i % 3 == 0)
+				if (i % 5 != 0)
+					count++;
+		printf("결과 %d", count);
 	}
-	printf("각 자리수의 합: %d", count);
+	else
+		printf("n은 양의 정수입니다");
+
+
+		
 }
