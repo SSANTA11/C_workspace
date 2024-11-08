@@ -236,7 +236,8 @@ int main() {
 #include<math.h>
 
 
-long long facto(int n) {
+long long facto(int n) {	//recursion, recursive call
+							// 재귀(순환)호출
 	if (n == 0)
 		return 1;
 	else
