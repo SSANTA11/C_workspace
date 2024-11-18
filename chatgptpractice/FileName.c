@@ -556,24 +556,179 @@ makefile
 //			count_2 += i;
 //printf("짝수의 합: %d\n홀수의 합: %d", count_1, count_2);
 //}
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int n, count = 0;
+//	printf("정수를 입력하세요");
+//	scanf("%d", &n);
+//	if (n > 0) {
+//		for (int i = 1; i <= n; i++)
+//			if (i % 3 == 0)
+//				if (i % 5 != 0)
+//					count++;
+//		printf("결과 %d", count);
+//	}
+//	else
+//		printf("n은 양의 정수입니다");
+//
+//
+//		
+//}
+
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//// 팩토리얼을 계산하는 재귀 함수
+//int factorial(int n) {
+//    if (n <= 1)  // 기저 조건: n이 1 또는 0일 때 1을 반환
+//        return 1;
+//    else
+//        return n * factorial(n - 1);  // n * (n-1)! 을 계산
+//}
+//
+//int main() {
+//    int number;
+//    printf("정수를 입력하세요: ");
+//    scanf("%d", &number);
+//
+//    printf("%d! = %d\n", number, factorial(number));
+//    return 0;
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int multi(int a, int b) {
+//	if (a == b)
+//		return a;
+//	else
+//		return a*multi(a + 1, b);
+//}
+//
+//
+//int main() {
+//	printf("%d", multi(1,3) );
+//}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int count(int n) {
+//	int c = 0;
+//	if (n == 0)
+//		return c;
+//	else
+//		count(n / 10);
+//}
+//int main() {
+//
+//}
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+//배열 개념문제
+//
+//int main() {
+//    int ar[5];  // 크기가 5인 배열 선언
+//
+//    // 사용자 입력받기
+//    printf("5개의 정수를 입력하세요:\n");
+//    for (int i = 0; i < 5; i++) {
+//        printf("%d번째 정수 입력: ", i + 1);
+//        scanf("%d", &ar[i]);
+//    }
+//
+//    // 배열 요소 출력
+//    printf("입력한 정수: ");
+//    for (int i = 0; i < 5; i++) {
+//        printf("%d ", ar[i]);
+//    }
+//
+//    return 0;
+//}
 
+// 배열 선언과 사용
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main() {
+//	int arr[10], s = 0;
+//	for (int i = 0; i < 10; i++) {
+//		scanf("%d", &arr[i]);
+//		s += arr[i];
+//	}
+//	printf("배열 요소의 총합: %d", s);
+//}
+// 
+// 
+// 다차원 배열 문제
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int arr[3][3],sum=0;
+//	for (int r = 0; r < 3; r++) {
+//		for (int c = 0; c < 3; c++) {
+//			scanf("%d", &arr[r][c]);
+//		}
+//	}
+//	for (int r = 0; r < 3; r++) {
+//		for (int c = 0; c < 3; c++) {
+//			sum += arr[r][c];
+//		}
+//		printf("%d행의 합: %d\n", r+1, sum);
+//		sum = 0;
+//	}
+//}
+
+// 배열의 최대 최소 찾기
+//int main() {
+//	int arr[5],min,max;
+//	
+//	for (int i = 0; i < 5; i++) {
+//		scanf("%d", &arr[i]);
+//	}
+//	max = arr[0];
+//	min = arr[0];
+//	for (int i = 0; i < 5; i++) {
+//		if (min > arr[i])
+//			min = arr[i];
+//		if (max < arr[i])
+//			max = arr[i];
+//	}
+//	printf("최대값: %d\n최소값: %d", max, min);
+//}
+//
+//#include <stdlib.h>
+//#include <time.h>
+//
+//int main() {
+//	int arr[6] = { 0 };
+//
+//	srand(time(0));
+//	for (int i = 0; i < 100; i++) {
+//		arr[rand() % 6]++;
+//	}
+//	for (int i = 0; i < 6; i++)
+//		printf("%d: %d번\n", i + 1, arr[i]);
+//}
+
+#include <stdlib.h>
+#include <time.h>
 int main() {
-	int n, count = 0;
-	printf("정수를 입력하세요");
-	scanf("%d", &n);
-	if (n > 0) {
-		for (int i = 1; i <= n; i++)
-			if (i % 3 == 0)
-				if (i % 5 != 0)
-					count++;
-		printf("결과 %d", count);
+	srand(time(0));
+	int num, count = 0, arr[45] = { 0 };
+	do {
+		num = rand() % 45;
+		if (arr[num]==0) {
+			arr[num]=1;
+			count++;
+		}
+	} while (count<6);
+	printf("로또번호: ");
+	for (int i = 0; i < 45; i++) {
+		if (arr[i] == 1)
+			printf("%d ", i + 1);
 	}
-	else
-		printf("n은 양의 정수입니다");
-
-
-		
 }
