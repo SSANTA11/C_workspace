@@ -42,3 +42,69 @@
 //	} while (num !=-1);
 //}
 
+//소수찾기
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int num, arr[1000], count=0;
+//	scanf("%d", &num);
+//	for (int i = 0; i < num; i++)
+//		scanf("%d", &arr[i]);
+//
+//	
+//		for (int i = 0; i < num; i++){
+//			int pri = 1;
+//				if (arr[i] < 2){
+//					pri = 0;
+//			}
+//
+//			else{
+//				for (int r = 2; r <= arr[i] / 2; r++)
+//					if (arr[i] % r == 0) {
+//						pri = 0;
+//						break;
+//					}
+//			}
+//			if (pri == 1)
+//				count++;
+//	}
+//		printf("%d", count);
+//		return 0;
+//}
+
+//소수
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int M, N, sum = 0, st;
+	scanf("%d", &M);
+	scanf("%d", &N);
+	for (int i = M; i <= N; i++) {
+		int  isPrime = 1;
+		if (i < 2) {
+			isPrime=0;
+		}
+		else {
+			for (int r = 2; r < i; r++) {
+				if (i % r == 0) {
+					isPrime = 0;
+				}
+			}
+		}
+		if (isPrime == 1) {
+			if (sum == 0) {
+				st = i;
+			}
+			sum += i;
+		}
+	}
+	if (sum == 0) {
+		printf("%d", -1);
+	}
+	else
+		printf("%d\n%d", sum, st);
+}
