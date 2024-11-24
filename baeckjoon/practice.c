@@ -74,37 +74,61 @@
 //}
 
 //¼Ò¼ö
+//
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <math.h>
+//
+//int main() {
+//	int M, N, sum = 0, st;
+//	scanf("%d", &M);
+//	scanf("%d", &N);
+//	for (int i = M; i <= N; i++) {
+//		int  isPrime = 1;
+//		if (i < 2) {
+//			isPrime=0;
+//		}
+//		else {
+//			for (int r = 2; r < i; r++) {
+//				if (i % r == 0) {
+//					isPrime = 0;
+//				}
+//			}
+//		}
+//		if (isPrime == 1) {
+//			if (sum == 0) {
+//				st = i;
+//			}
+//			sum += i;
+//		}
+//	}
+//	if (sum == 0) {
+//		printf("%d", -1);
+//	}
+//	else
+//		printf("%d\n%d", sum, st);
+//}
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <math.h>
-
+void dist(int n) {
+	if (n == 1) {
+	}
+	else {
+		for (int i = 2; i * i <= n; i++) {
+			while (n % i == 0) {
+				printf("%d\n", i);
+				n /= i;
+			}
+		}
+		if (n != 1) {
+			printf("%d",n);
+		}
+	}
+	return;
+}
 int main() {
-	int M, N, sum = 0, st;
-	scanf("%d", &M);
-	scanf("%d", &N);
-	for (int i = M; i <= N; i++) {
-		int  isPrime = 1;
-		if (i < 2) {
-			isPrime=0;
-		}
-		else {
-			for (int r = 2; r < i; r++) {
-				if (i % r == 0) {
-					isPrime = 0;
-				}
-			}
-		}
-		if (isPrime == 1) {
-			if (sum == 0) {
-				st = i;
-			}
-			sum += i;
-		}
-	}
-	if (sum == 0) {
-		printf("%d", -1);
-	}
-	else
-		printf("%d\n%d", sum, st);
+	int n;
+	scanf("%d", &n);
+	dist(n);
 }
