@@ -109,26 +109,26 @@
 //		printf("%d\n%d", sum, st);
 //}
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-void dist(int n) {
-	if (n == 1) {
-	}
-	else {
-		for (int i = 2; i * i <= n; i++) {
-			while (n % i == 0) {
-				printf("%d\n", i);
-				n /= i;
-			}
-		}
-		if (n != 1) {
-			printf("%d",n);
-		}
-	}
-	return;
-}
-int main() {
-	int n;
-	scanf("%d", &n);
-	dist(n);
-}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void dist(int n) {
+//	if (n == 1) {
+//	}
+//	else {
+//		for (int i = 2; i * i <= n; i++) {
+//			while (n % i == 0) {
+//				printf("%d\n", i);
+//				n /= i;
+//			}
+//		}
+//		if (n != 1) {
+//			printf("%d",n);
+//		}
+//	}
+//	return;
+//}
+//int main() {
+//	int n;
+//	scanf("%d", &n);
+//	dist(n);
+//}
