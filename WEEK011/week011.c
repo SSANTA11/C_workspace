@@ -123,23 +123,23 @@ int main() {
 	int i, k, indexOFMin;
 	int list[SIZE]= { 1,2,3,2312,222,333,222,33,12,342,54435,2,445 };
 
-	for (k = 0; k < SIZE - 1; k++) { // 0등(1등)부터 12등(13등)까지
-									 // 남은 요소들 중 가장 앞의 것이 작다고 가정
+	for (k = 0; k < SIZE - 1; k++) {			 // 0등(1등)부터 12등(13등)까지
+												 // 남은 요소들 중 가장 앞의 것이 작다고 가정
 		indexOFMin = k;
 		for (i =  k + 1; i < SIZE; i++) {
-			if (list[i] < list[indexOFMin]) { // 더 작은 것을 발견하면 기록
+			if (list[i] < list[indexOFMin]) {	 // 더 작은 것을 발견하면 기록
 				indexOFMin = i;
 			}
 		}
-		if (k!=indexOFMin) {// 남은 요소들 중 가장 작은 값 자리에 오도록 자리바꿈
+		if (k!=indexOFMin) {					 // 남은 요소들 중 가장 작은 값 자리에 오도록 자리바꿈
 			int tmp = list[k];					 // 남은 요소들 중 가장 작은 값이 앞에 오도록 자리바꿈
 			list[k] = list[indexOFMin];
 			list[indexOFMin] = tmp;
 		}
 	}
-	for (i = 0; i < SIZE; i++) { // 정렬결과 출력
+	for (i = 0; i < SIZE; i++) {				 // 정렬결과 출력
 		printf("%d ", list[i]);
 	}
 }
 
-// 시험에는 버블이든 선택정렬이든 능숙하게 사용하도록 준비하자
+												 // 시험에는 버블정렬이든 선택정렬이든 능숙하게 사용하도록 준비하자
