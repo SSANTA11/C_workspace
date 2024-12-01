@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#define SIZE 13
 //#define RANGE 100
 //#define SIZE 10
-#define SIZE 13
 //int a = 3;
 //int price[5];
 //printf("%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n", sizeof(a), sizeof(int), sizeof(long), sizeof(long long), sizeof(char), sizeof(double), sizeof("programming"), sizeof("qwer"), sizeof(price), sizeof(price[0]));

@@ -132,3 +132,41 @@
 //	scanf("%d", &n);
 //	dist(n);
 //}
+
+// 백준온라인 27323번
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main() {
+//	int A, B;
+//	scanf("%d", &A);
+//	scanf("%d", &B);
+//	printf("%d", A * B);
+//}
+
+
+//직사각형에서 탈출 1085번
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int x, y, w, h, c, r;
+	scanf("%d %d %d %d", &x, &y, &w, &h);
+	c = h - y;
+	r = w - x;
+	if (c > r) {
+		if (y > c) {
+			printf("%d", c);
+		}
+		else {
+			printf("%d", y);
+		}
+	}
+	else {
+		if (x > r) {
+			printf("%d", r);
+		}
+		else {
+			printf("%d", x);
+		}
+	}
+}
