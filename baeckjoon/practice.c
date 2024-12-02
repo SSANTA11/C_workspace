@@ -145,26 +145,38 @@
 
 
 //직사각형에서 탈출 1085번
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int x, y, w, h, right, left, up, down;
+//	int list[4] = { 0 },min=1001;
+//	scanf("%d %d %d %d", &x, &y, &w, &h);
+//	right = x;
+//	left = w - x;
+//	down = y;
+//	up = h - y;
+//	list[0] = right;
+//	list[1] = left;
+//	list[2] = down;
+//	list[3] = up;
+//
+//	for (int i = 0; i < 4; i++) {
+//		if (list[i] < min) {
+//			min = list[i];
+//		}
+//	}
+//	printf("%d", min);
+//}
+
+//3009번 네 번째 점
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main() {
-	int x, y, w, h, right, left, up, down;
-	int list[4] = { 0 },min=1001;
-	scanf("%d %d %d %d", &x, &y, &w, &h);
-	right = x;
-	left = w - x;
-	down = y;
-	up = h - y;
-	list[0] = right;
-	list[1] = left;
-	list[2] = down;
-	list[3] = up;
+	int a_1, b_1, a_2, b_2, a_3, b_3;
+	scanf("%d %d", &a_, &b);
+	scanf("%d %d", &a, &b);
+	scanf("%d %d", &a, &b);
 
-	for (int i = 0; i < 4; i++) {
-		if (list[i] < min) {
-			min = list[i];
-		}
-	}
-	printf("%d", min);
 }
