@@ -170,13 +170,32 @@
 //}
 
 //3009번 네 번째 점
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-
-int main() {
-	int a_1, b_1, a_2, b_2, a_3, b_3;
-	scanf("%d %d", &a_, &b);
-	scanf("%d %d", &a, &b);
-	scanf("%d %d", &a, &b);
-
-}
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//
+//int main() {
+//	int a_1, b_1, a_2, b_2, a_3, b_3, x, y;
+//	scanf("%d %d", &a_1, &b_1);
+//	scanf("%d %d", &a_2, &b_2);
+//	scanf("%d %d", &a_3, &b_3);
+//		if (a_1 == a_2) {
+//			x = a_3;
+//		}
+//		else if (a_2 == a_3) {
+//			x = a_1;
+//		}
+//		else if (a_3 == a_1) {
+//			x = a_2;
+//		}
+//
+//		if (b_1 == b_2) {
+//			y = b_3;
+//		}
+//		else if (b_2 == b_3) {
+//			y = b_1;
+//		}
+//		else if (b_3 == b_1) {
+//			y = b_2;
+//		}
+//		printf("%d %d", x, y);
+//}
