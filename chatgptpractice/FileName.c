@@ -716,19 +716,44 @@ makefile
 
 #include <stdlib.h>
 #include <time.h>
-int main() {
-	srand(time(0));
-	int num, count = 0, arr[45] = { 0 };
-	do {
-		num = rand() % 45;
-		if (arr[num]==0) {
-			arr[num]=1;
-			count++;
+//int main() {
+//	srand(time(0));
+//	int num, count = 0, arr[45] = { 0 };
+//	do {
+//		num = rand() % 45;
+//		if (arr[num]==0) {
+//			arr[num]=1;
+//			count++;
+//		}
+//	} while (count<6);
+//	printf("로또번호: ");
+//	for (int i = 0; i < 45; i++) {
+//		if (arr[i] == 1)
+//			printf("%d ", i + 1);
+//	}
+//}
+
+void selection(int arr[], int n) {
+	for (int i = 0; i < n - 1; i++) {
+		int minIndex = i;
+		for (int j = i + 1; j < n; j++) {
+			if (arr[j] < arr[minIndex]) {
+				minIndex = j;
+			}
 		}
-	} while (count<6);
-	printf("로또번호: ");
-	for (int i = 0; i < 45; i++) {
-		if (arr[i] == 1)
-			printf("%d ", i + 1);
+		int tmp = arr[i];
+		arr[i] = arr[minIndex];
+		arr[minIndex] = tmp;
+	}
+
+void bubble(int arr[], int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 0; j < n - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
 	}
 }
