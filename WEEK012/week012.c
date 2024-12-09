@@ -92,7 +92,7 @@
 //*/
 //#include <string.h>
 //int main() {
-//	// 문자열은 char 배열로 표현, 마지막을 '\0'으로 표시
+//	// 문자열은 'char 배열'로 표현, 마지막을 '\0'으로 표시 ****************************************** 문자열은 char의 배열 **********************************************
 //	char str1[100] = "abcd", str2[100];
 //	char ch; 
 //	ch='a'; 
@@ -134,3 +134,5 @@ int main() {
 	printf("%s %d %.1lf", fam[0].name, fam[0].age, fam[0].height);
 	printf("%s %d %.1lf", fam[1].name, fam[1].age, fam[1].height);
 }
+
+//C에서 문자열은 100%는 문자 char의 배열
