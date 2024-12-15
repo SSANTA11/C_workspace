@@ -733,27 +733,52 @@ makefile
 //	}
 //}
 
-void selection(int arr[], int n) {
-	for (int i = 0; i < n - 1; i++) {
-		int minIndex = i;
-		for (int j = i + 1; j < n; j++) {
-			if (arr[j] < arr[minIndex]) {
-				minIndex = j;
-			}
-		}
-		int tmp = arr[i];
-		arr[i] = arr[minIndex];
-		arr[minIndex] = tmp;
-	}
+//void selection(int arr[], int n) {
+//	for (int i = 0; i < n - 1; i++) {
+//		int minIndex = i;
+//		for (int j = i + 1; j < n; j++) {
+//			if (arr[j] < arr[minIndex]) {
+//				minIndex = j;
+//			}
+//		}
+//		int tmp = arr[i];
+//		arr[i] = arr[minIndex];
+//		arr[minIndex] = tmp;
+//	}
+//
+//void bubble(int arr[], int n) {
+//	for (int i = 0; i < n - 1; i++) {
+//		for (int j = 0; j < n - i - 1; j++) {
+//			if (arr[j] > arr[j + 1]) {
+//				int temp = arr[j];
+//				arr[j] = arr[j	+ 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//}
 
-void bubble(int arr[], int n) {
-	for (int i = 0; i < n - 1; i++) {
-		for (int j = 0; j < n - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				int temp = arr[j];
-				arr[j] = arr[j	+ 1];
-				arr[j + 1] = temp;
-			}
+struct Student {
+	char name[50];
+	int student_id;
+	int score;
+};
+
+int main() {
+	int max = 0;
+	struct Student student[3];
+	for (int i = 0; i < 3;i++) {
+		printf("학생 %d 정보 입력:\n",i+1);
+		printf("이름: ");
+		scanf("%d",student[i].name);
+		printf("\n학번: ");
+		scanf("%d",student[i].student_id);
+		printf("\n점수: ");
+		scanf("%d",student[i].score);
+		if (max > student[i].score) {
+			max = i;
 		}
 	}
+	printf("평균 점수: %lf", (student[0].score + student[1].score + student[2].score) / 3);
+	printf("최고 점수 학생: %s", student[max].name);
 }
